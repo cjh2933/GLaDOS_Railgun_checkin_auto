@@ -2,7 +2,12 @@ name: 单独运行Glados签到
 
 on:
   workflow_dispatch:
-
+  schedule:
+    # UTC 1点30分(北京时间 9点30分)
+    - cron: 10 1 * * *
+  watch:
+    types: [started]
+    
 jobs:
   build:
     runs-on: ubuntu-latest
